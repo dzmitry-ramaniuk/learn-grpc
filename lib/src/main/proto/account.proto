@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package account;
+
+option java_package = "com.learn.learngrpc.proto";
+option java_multiple_files = true;
+
+
+message Account{
+  int32 id = 1;
+  string name = 2;
+  string surname = 3;
+}
+
+message AccountRequest {
+  int32 id = 1;
+}
+
+service AccountService{
+    rpc GetAccount(AccountRequest) returns (Account);
+}
